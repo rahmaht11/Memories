@@ -3,68 +3,140 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
-<title>Kesan dan Pesan Anjangsana</title>
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Lora:wght@500;700&family=Plus+Jakarta+Sans:wght@400;500;700&display=swap">
+<title>Anjangsana x Rotasi 2.0</title>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Pixelify+Sans:wght@500;600;700&family=Nunito:wght@400;600;800&display=swap">
 <style>
-:root{--bg:#FBF6F4;--card:#fff;--ink:#2B1816;--muted:#7A625E;--line:#EADBD6;--red:#C2271D;--soft:#F6E3DE}
-@media (prefers-color-scheme:dark){:root{--bg:#190F0E;--card:#251817;--ink:#F6E9E6;--muted:#B79C97;--line:#3A2624;--red:#E5483D;--soft:#3A201D;color-scheme:dark}}
+:root{--ink:#3B2342;--purple:#6A4FC9;--purple-dk:#4A2F9E;--pink:#FF5FA2;--yellow:#FFE66D;--blue:#9BE8FF;--screen1:#D2EBFF;--screen2:#E0D2FF;--muted:#6F5A86}
 *{box-sizing:border-box}
-body{margin:0;background:var(--bg);color:var(--ink);font:16px/1.5 "Plus Jakarta Sans",system-ui,sans-serif;padding:0 16px 48px}
-main{max-width:520px;margin:0 auto}
-.top{border-top:10px solid var(--red);margin:0 -16px 24px}
-h1{font-family:Lora,Georgia,serif;font-size:28px;line-height:1.15;margin:0 0 6px;text-wrap:balance}
-p.lead{color:var(--muted);margin:0 0 20px}
-form{display:grid;gap:16px}
-label{display:grid;gap:6px;font-weight:700;font-size:14px}
-input[type=text],textarea{font:inherit;color:var(--ink);background:var(--card);border:1px solid var(--line);border-radius:10px;padding:12px;width:100%}
-textarea{min-height:170px;resize:vertical;font-family:Lora,Georgia,serif;font-size:17px}
-.photo{border:2px dashed var(--line);border-radius:12px;padding:16px;display:grid;gap:10px;justify-items:center;text-align:center;background:var(--card)}
-.photo img{max-width:100%;max-height:260px;border-radius:8px}
-button{font:inherit;font-weight:700;border-radius:10px;border:1px solid var(--line);background:var(--card);color:var(--ink);padding:12px 16px;cursor:pointer}
-button.primary{background:var(--red);color:#fff;border-color:var(--red);padding:14px;font-size:17px}
+[hidden]{display:none!important}
+body{margin:0;color:var(--ink);font:17px/1.5 Nunito,system-ui,sans-serif;
+  background:radial-gradient(circle at 18% 8%,rgba(255,255,255,.6),transparent 38%),radial-gradient(circle,rgba(255,255,255,.35) 2px,transparent 2.6px) 0 0/16px 16px,linear-gradient(160deg,#FF7EBB,#FFB3D9 55%,#FF8CC6) fixed}
+.pix{font-family:"Pixelify Sans",system-ui,sans-serif;text-transform:uppercase;letter-spacing:.02em}
+.ol{text-shadow:-3px 0 var(--purple),3px 0 var(--purple),0 -3px var(--purple),0 3px var(--purple),-3px -3px var(--purple),3px -3px var(--purple),-3px 3px var(--purple),3px 3px var(--purple),0 6px 0 var(--purple-dk),3px 6px 0 var(--purple-dk),-3px 6px 0 var(--purple-dk)}
+.ol-s{text-shadow:-2px 0 var(--purple),2px 0 var(--purple),0 -2px var(--purple),0 2px var(--purple),-2px -2px var(--purple),2px -2px var(--purple),-2px 2px var(--purple),2px 2px var(--purple),0 4px 0 var(--purple-dk)}
+.brand{display:flex;flex-direction:column;gap:2px;line-height:1}
+.brand .k{color:#fff;font-size:clamp(14px,1.9vw,26px);font-weight:700}
+.brand .t{display:flex;flex-wrap:wrap;align-items:baseline;gap:.25em .3em;font-weight:700;font-size:clamp(30px,5.2vw,72px)}
+.brand .a{color:#FFF27A}.brand .x{color:#fff;font-size:.6em}.brand .r{color:var(--blue)}
+.brand .v{font-size:.34em;color:var(--purple-dk);background:#fff;border:3px solid var(--purple);border-radius:999px;padding:.15em .6em;text-shadow:none;align-self:center;transform:rotate(-4deg)}
+.stk{position:absolute;pointer-events:none;width:var(--s,40px);transform:rotate(var(--r,0deg));
+ filter:drop-shadow(1.5px 0 0 #3B2342) drop-shadow(-1.5px 0 0 #3B2342) drop-shadow(0 1.5px 0 #3B2342) drop-shadow(0 -1.5px 0 #3B2342) drop-shadow(3px 0 0 #fff) drop-shadow(-3px 0 0 #fff) drop-shadow(0 3px 0 #fff) drop-shadow(0 -3px 0 #fff) drop-shadow(0 6px 4px rgba(59,35,66,.3))}
+.stk .px,.ico .px{display:block;width:100%;height:auto}
+.ico{filter:drop-shadow(2px 0 0 #3B2342) drop-shadow(-2px 0 0 #3B2342) drop-shadow(0 2px 0 #3B2342) drop-shadow(0 -2px 0 #3B2342)}
+@media (prefers-reduced-motion:no-preference){.bob{animation:bob 2.8s ease-in-out infinite}.bob2{animation:bob 3.4s -1s ease-in-out infinite}@keyframes bob{50%{transform:translateY(-8px) rotate(calc(var(--r,0deg) + 6deg))}}}
+button{font:inherit;font-family:"Pixelify Sans",sans-serif;font-weight:600;border-radius:12px;border:3px solid var(--purple-dk);background:var(--yellow);color:var(--ink);padding:8px 16px;cursor:pointer;box-shadow:0 4px 0 var(--purple-dk);transition:transform .08s,box-shadow .08s}
+button:active{transform:translateY(3px);box-shadow:0 1px 0 var(--purple-dk)}
+:focus-visible{outline:3px solid #fff;outline-offset:3px;box-shadow:0 0 0 6px var(--purple)}
+
+body{padding:26px 16px 70px;overflow-x:hidden}
+main{max-width:540px;margin:0 auto;position:relative}
+.brand{margin:0 0 18px;position:relative;z-index:1}
+.brand .t{font-size:clamp(34px,11vw,56px)}
+.lead{color:#fff;font-weight:800;margin:0 0 20px;text-shadow:0 2px 0 var(--purple)}
+.screen{position:relative;background:linear-gradient(160deg,var(--screen1),var(--screen2));border:4px solid var(--purple);border-radius:26px;box-shadow:0 0 0 4px #fff,0 0 0 8px var(--pink),0 12px 0 8px var(--purple-dk);padding:22px 18px 20px;display:grid;gap:18px;z-index:1}
+form{display:grid;gap:18px}
+label{display:grid;gap:7px;font-family:"Pixelify Sans",sans-serif;font-weight:600;font-size:18px;text-transform:uppercase;color:var(--purple-dk)}
+input[type=text],textarea{font:inherit;font-family:Nunito,sans-serif;font-weight:700;text-transform:none;color:var(--ink);background:#fff;border:3px solid var(--purple);border-radius:14px;padding:12px 14px;width:100%;box-shadow:inset 0 3px 0 rgba(106,79,201,.12)}
+input::placeholder,textarea::placeholder{color:#B5A3CC;font-weight:600}
+textarea{min-height:170px;resize:vertical}
+.photo{border:3px dashed var(--purple);border-radius:18px;padding:16px;display:grid;gap:10px;justify-items:center;text-align:center;background:rgba(255,255,255,.65)}
+.photo strong{font-family:"Pixelify Sans",sans-serif;text-transform:uppercase;color:var(--purple-dk)}
+.photo img{max-width:100%;max-height:260px;border-radius:12px;border:4px solid #fff;box-shadow:0 4px 0 var(--purple);transform:rotate(-1.5deg)}
+button.primary{background:var(--pink);color:#fff;font-size:22px;padding:14px;text-shadow:0 2px 0 var(--purple-dk);width:100%}
 button:disabled{opacity:.6}
-:focus-visible{outline:3px solid var(--red);outline-offset:2px}
-.err{color:var(--red);font-weight:500;min-height:1.4em}
+.err{color:#C2185B;font-weight:800;min-height:1.4em}
 .hp{position:absolute;left:-9999px}
-.done{text-align:center;padding:40px 0;display:grid;gap:14px;justify-items:center}
-.done svg{width:120px}
+.done{justify-items:center;text-align:center;padding:30px 18px}
+.done .ico{width:110px}
+.done h1{font-size:clamp(26px,8vw,38px);margin:0;color:#FFF27A}
+.done p{margin:0;font-weight:800;color:var(--purple-dk)}
 </style>
 </head>
 <body>
-<div class="top"></div>
 <main>
+  <div class="stk bob" style="--s:46px;--r:-12deg;right:56px;top:-14px" id="s1"></div>
+  <div class="stk bob2" style="--s:40px;--r:14deg;right:0;top:-6px" id="s2"></div>
+  <div class="brand pix" id="brand"></div>
+  <p class="lead" id="lead"></p>
   <div id="formView">
-    <h1>Kesan dan Pesan Anjangsana</h1>
-    <p class="lead">Tulis kesan dan pesanmu. Setelah dikirim, pesanmu langsung tampil di layar acara.</p>
-    <form id="f">
-      <label for="name">Nama kamu<input type="text" id="name" maxlength="80" autocomplete="name" required placeholder="Contoh: Kekey"></label>
-      <label for="message">Kesan dan pesan<textarea id="message" maxlength="3000" required placeholder="Tulis di sini…"></textarea></label>
-      <div class="photo">
-        <strong style="font-size:14px">Foto (boleh dikosongkan)</strong>
-        <img id="prev" alt="Pratinjau foto" hidden>
-        <input type="file" id="photo" accept="image/*" hidden>
-        <div style="display:flex;gap:8px;flex-wrap:wrap;justify-content:center">
-          <button type="button" id="pick">Pilih foto</button>
-          <button type="button" id="clear" hidden>Hapus foto</button>
+    <div class="screen">
+      <div class="stk bob" style="--s:36px;--r:10deg;right:-18px;top:-22px" id="s3"></div>
+      <div class="stk bob2" style="--s:34px;--r:-8deg;left:-20px;bottom:40px" id="s4"></div>
+      <form id="f">
+        <label for="name"><span id="tName"></span><input type="text" id="name" maxlength="80" autocomplete="name" required></label>
+        <label for="message"><span id="tMsg"></span><textarea id="message" maxlength="3000" required></textarea></label>
+        <div class="photo">
+          <strong id="tPhoto"></strong>
+          <img id="prev" alt="Pratinjau foto" hidden>
+          <input type="file" id="photo" accept="image/*" hidden>
+          <div style="display:flex;gap:10px;flex-wrap:wrap;justify-content:center">
+            <button type="button" id="pick"></button>
+            <button type="button" id="clear" hidden></button>
+          </div>
         </div>
-      </div>
-      <input class="hp" type="text" id="website" tabindex="-1" autocomplete="off" aria-hidden="true">
-      <div class="err" id="err" role="alert"></div>
-      <button class="primary" id="send" type="submit">Kirim</button>
-    </form>
+        <input class="hp" type="text" id="website" tabindex="-1" autocomplete="off" aria-hidden="true">
+        <div class="err" id="err" role="alert"></div>
+        <button class="primary" id="send" type="submit"></button>
+      </form>
+    </div>
   </div>
-  <div class="done" id="doneView" hidden>
-    <svg viewBox="0 0 120 100" fill="none" aria-hidden="true"><rect x="10" y="30" width="100" height="62" rx="4" fill="var(--card)" stroke="var(--ink)" stroke-width="4"/><path d="M10 34l50 36 50-36" stroke="var(--ink)" stroke-width="4"/><path d="M60 62c-14-12-24-18-24-28 0-7 6-11 12-11 5 0 10 3 12 8 2-5 7-8 12-8 6 0 12 4 12 11 0 10-10 16-24 28z" fill="var(--red)" transform="translate(6 4) scale(.9)"/></svg>
-    <h1>Terkirim, terima kasih!</h1>
-    <p class="lead">Lihat pesanmu muncul di layar.</p>
-    <button id="again">Kirim pesan lain</button>
+  <div class="screen done" id="doneView" hidden>
+    <div class="stk bob" style="--s:40px;--r:12deg;right:-14px;top:-18px" id="s5"></div>
+    <div class="stk bob2" style="--s:38px;--r:-10deg;left:-16px;top:40%" id="s6"></div>
+    <div class="ico bob" id="doneIco"></div>
+    <h1 class="pix ol-s" id="tDone"></h1>
+    <p id="tDone2"></p>
+    <button id="again"></button>
   </div>
 </main>
 <script>
+/* ===================== TEKS: ubah di sini ===================== */
+var TEKS={
+  judul1:"Anjangsana",judul2:"Rotasi",versi:"2.0",
+  sub:"Kesan & Pesan",
+  sapaan:"Hai! Tulis kesan dan pesanmu di sini ya. Habis dikirim, langsung muncul di layar!",
+  nama:"Nama kamu",
+  pesan:"Kesan dan pesanmu",
+  foto:"Mau tambah foto? (boleh dikosongkan)",
+  pilihFoto:"Pilih foto",gantiFoto:"Ganti foto",hapusFoto:"Hapus foto",
+  kirim:"Kirim kenangan",mengirim:"Mengirim...",
+  sukses:"Yeay, terkirim!",suksesIsi:"Lihat pesanmu muncul di layar ya.",lagi:"Kirim pesan lain"
+};
+/* ================================================================ */
+/* ---------- ikon pixel (dipakai sebagai ikon pesan tanpa foto dan stiker) ---------- */
+var PX={
+ heart:[".pp.pp.","pwppppp","ppppppp",".ppppp.","..ppp..","...p..."],
+ star:["....y....","....y....","...yyy...","yyyyyyyyy",".yyyYyyy.","..yyyyy..","..yyyyy..",".yyy.yyy.",".yy...yy."],
+ smiley:["..yyyyy..",".yyyyyyy.","yyyyyyyyy","yykyyykyy","yykyyykyy","ypyyyyypy","yykyyykyy",".yykkkyy.","..yyyyy.."],
+ cat:["l.......l","lll...lll","lllllllll","llklllkll","lllllllll","lpllpllpl",".lllllll.","..lllll.."],
+ ghost:["..wwww..",".wwwwww.","wwwwwwww","wwkwwkww","wwkwwkww","wPwwwwPw","wwwwwwww","wwwwwwww","ww.ww.ww"],
+ flower:["..ppp..",".ppppp.","pppyppp",".ppppp.","..ppp..","...g...","..ggg..","...g..."],
+ coin:[".yyyyy.","yyYYyyy","yYyooyy","yYyooyy","yyyooyy","yyyyyyy",".yyyyy."],
+ cloud:["..BBB....",".BBBBBBB.","BBkBBBkBB","BpBBBBBpB",".BBBBBBB."],
+ plusP:["..p..","..p..","ppppp","..p..","..p.."],
+ plusY:["..y..","..y..","yyyyy","..y..","..y.."],
+ plusB:["..b..","..b..","bbbbb","..b..","..b.."],
+ plusL:["..l..","..l..","lllll","..l..","..l.."]
+};
+var PXC={p:"#FF5FA2",P:"#FFB3D1",y:"#FFD84D",Y:"#FFF4B8",o:"#FFA24D",b:"#5DB8FF",B:"#D4ECFF",l:"#A98BFF",w:"#FFFFFF",k:"#3B2342",g:"#4CD38A"};
+function px(n){var g=PX[n],h=g.length,w=g[0].length,s="";
+  for(var y=0;y<h;y++)for(var x=0;x<w;x++){var c=g[y].charAt(x);if(c!==".")s+='<rect x="'+x+'" y="'+y+'" width="1.02" height="1.02" fill="'+PXC[c]+'"/>'}
+  return '<svg class="px" viewBox="-.5 -.5 '+(w+1)+' '+(h+1)+'" shape-rendering="crispEdges" aria-hidden="true">'+s+'</svg>'}
+var ICONS=["heart","cat","star","smiley","ghost","flower","coin","cloud"];
+var STK=["heart","star","plusP","smiley","plusY","cat","coin","plusB","flower","ghost","plusL","cloud"];
+
 (function(){
   var $=function(i){return document.getElementById(i)}, photoData="";
+  function esc(s){return String(s).replace(/&/g,"&amp;").replace(/</g,"&lt;")}
+  document.title=TEKS.judul1+" x "+TEKS.judul2+" "+TEKS.versi;
+  $("brand").innerHTML='<div class="k ol-s">'+esc(TEKS.sub)+'</div><div class="t ol"><span class="a">'+esc(TEKS.judul1)+'</span><span class="x">x</span><span class="r">'+esc(TEKS.judul2)+'</span><span class="v">'+esc(TEKS.versi)+'</span></div>';
+  $("lead").textContent=TEKS.sapaan;$("tName").textContent=TEKS.nama;$("tMsg").textContent=TEKS.pesan;$("tPhoto").textContent=TEKS.foto;
+  $("pick").textContent=TEKS.pilihFoto;$("clear").textContent=TEKS.hapusFoto;$("send").textContent=TEKS.kirim;
+  $("tDone").textContent=TEKS.sukses;$("tDone2").textContent=TEKS.suksesIsi;$("again").textContent=TEKS.lagi;
+  [["s1","heart"],["s2","star"],["s3","plusY"],["s4","smiley"],["s5","star"],["s6","plusP"]].forEach(function(a){$(a[0]).innerHTML=px(a[1])});
+  $("doneIco").innerHTML=px("heart");
   $("pick").onclick=function(){$("photo").click()};
-  $("clear").onclick=function(){photoData="";$("photo").value="";$("prev").hidden=true;$("clear").hidden=true;$("pick").textContent="Pilih foto"};
+  $("clear").onclick=function(){photoData="";$("photo").value="";$("prev").hidden=true;$("clear").hidden=true;$("pick").textContent=TEKS.pilihFoto};
   function shrink(file,max){return new Promise(function(res,rej){
     var img=new Image(),u=URL.createObjectURL(file);
     img.onload=function(){var r=Math.min(1,max/Math.max(img.width,img.height)),c=document.createElement("canvas");
@@ -73,18 +145,18 @@ button:disabled{opacity:.6}
     img.onerror=function(){rej(new Error("Foto tidak bisa dibaca. Coba foto lain."))};img.src=u})}
   $("photo").onchange=async function(e){
     var f=e.target.files[0]; if(!f)return; $("err").textContent="";
-    try{photoData=await shrink(f,1400);$("prev").src=photoData;$("prev").hidden=false;$("clear").hidden=false;$("pick").textContent="Ganti foto"}
+    try{photoData=await shrink(f,1400);$("prev").src=photoData;$("prev").hidden=false;$("clear").hidden=false;$("pick").textContent=TEKS.gantiFoto}
     catch(x){$("err").textContent=x.message}
   };
   $("f").onsubmit=async function(e){
-    e.preventDefault();var b=$("send");b.disabled=true;b.textContent="Mengirim…";$("err").textContent="";
+    e.preventDefault();var b=$("send");b.disabled=true;b.textContent=TEKS.mengirim;$("err").textContent="";
     try{
       var r=await fetch("/api/kirim",{method:"POST",headers:{"content-type":"application/json"},body:JSON.stringify({name:$("name").value,message:$("message").value,photo:photoData,website:$("website").value})});
       var j=await r.json().catch(function(){return{}});
       if(!r.ok)throw new Error(j.error||"Gagal mengirim. Coba lagi.");
-      $("formView").hidden=true;$("doneView").hidden=false;
+      $("formView").hidden=true;$("doneView").hidden=false;window.scrollTo(0,0);
     }catch(x){$("err").textContent=x.message}
-    b.disabled=false;b.textContent="Kirim";
+    b.disabled=false;b.textContent=TEKS.kirim;
   };
   $("again").onclick=function(){$("message").value="";$("photo").value="";$("clear").onclick();$("doneView").hidden=true;$("formView").hidden=false;$("message").focus()};
 })();
